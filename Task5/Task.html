@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var first = 10 ;
+    var second = 20 ;
+
+    function swapNum (first, second){
+    var third = first;
+    first = second ;
+    second = third ;
+    console.log (`"swpnumber is" : ${third}`);
+}
+
+swapNum (first, second);
+
+    function withoutSwapNum (first, second){
+
+        first = first + second ;
+        second = first - second ;
+        first = first - second ;
+        console.log (`"without swpnumber is" : ${first}`);
+    }
+
+    withoutSwapNum (first, second);
+
+
+    // 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+    function fibonacciSeries (){
+        var n1 = 0 ;
+        var n2 = 1 ;
+        var nextTerm ;  
+        console.log (`"fibonacci series is" : `);
+        for (var i = 1;i <=10;i++){
+            console.log (n1) 
+          nextTerm = n1 + n2 ;
+           n1 = n2 ;
+           n2 = nextTerm ;
+    }  }
+     fibonacciSeries () ;
+
+
+        var series = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34] ;
+      
+     function sumofSeries (series){
+        var sum = 0 ;
+        for (var i = 0 ; i < series.length ; i++){
+            sum = sum + series[i] ;
+        }
+        console.log (`"sum of series is" : ${sum}`);        
+     }
+    
+        sumofSeries (series);
+     
+     function armStrongNum (num){
+        var sum = 0 ;
+        var temp = num ;
+        while (temp > 0){
+            var remainder = temp % 10 ;
+            sum = sum + remainder * remainder * remainder ;
+            temp = parseInt (temp / 10) ;
+        }
+        if (sum == num){
+            console.log (`"armstrong number is" : ${num}`);
+        } else {
+            console.log (`"not armstrong number is" : ${num}`);
+        }
+     }
+        armStrongNum (153) ;
+
+
+
+        function isperfectNum (num){
+            var sum = 0 ;
+            for (var i = 1 ; i < num ; i++){
+                if (num % i == 0){
+                    sum = sum + i ;
+                }
+            }
+            if (sum == num){
+                console.log (`"perfect number is" : ${num}`);
+            } else {
+                console.log (`"not perfect number is" : ${num}`);
+            }
+        }
+
+        isperfectNum (28) ;
+
+        function performStringReverse (str){
+            var reversed = "" ;
+            for (var i = str.length - 1 ; i >= 0 ; i--){
+                reversed = reversed + str[i] ;
+            }
+            console.log (`"reversed string is" : ${reversed}`);
+        }
+
+        performStringReverse ("hello") ;
+
+        function perfromNumberReverse (num){
+            var reversed = 0 ;
+            while (num > 0){
+                var remainder = num % 10 ;
+                reversed = reversed * 10 + remainder ;
+                num = parseInt (num / 10) ;
+            }
+            console.log (`"reversed number is" : ${reversed}`);
+        }
+        perfromNumberReverse (12345) ;
+
+        function checkPalindrome (str){
+            var reversed = "" ;
+            for (var i = str.length - 1 ; i >= 0 ; i--){
+                reversed = reversed + str[i] ;
+            }
+            if (str == reversed){
+                console.log (`"palindrome string is" : ${str}`);
+            } else {
+                console.log (`"not palindrome string is" : ${str}`);
+            }
+        }
+        checkPalindrome ("hello") ;
+        checkPalindrome ("sir");
+
+        
+       function printPrimeNum1to100 (){
+        console.log (`"prime numbers between 1 to 100 are" : `);
+        for (var num = 2 ; num <= 100 ; num++){
+            var isPrime = true ;
+            for (var i = 2 ; i <= Math.sqrt(num) ; i++){
+                if (num % i == 0){
+                    isPrime = false ;
+                    break ;
+                }
+            }
+            if (isPrime){
+                console.log (num) ;
+            }
+        }
+       }
+         printPrimeNum1to100 () ;
+     </script>
+</body>
+</html>
